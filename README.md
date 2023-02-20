@@ -1,4 +1,4 @@
-# vikipedi
+# vikipedi-özet
 Bu kod, kullanıcının belirlediği bir arama terimini Wikipedia'da arar ve her bir arama sonucu için özetlerini bir Word belgesinde toplar. Daha sonra belgeyi kullanıcının istediği bir isimle kaydeder.
 
 Kodun ilk satırlarında, Wikipedia'nın Türkçe sürümüne erişmek için dil ayarı Türkçe olarak ayarlanır. Ardından, bir while döngüsü kullanarak kullanıcıdan arama terimini alırız. Kullanıcı "q" harfine basarsa döngüden çıkılır.
