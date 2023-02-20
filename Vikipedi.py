@@ -59,7 +59,7 @@ while True:
    
     if result:
         # Dosyayı kaydet
-        doc.save(check + ' arama_sonucu.docx')
+        doc.save(check + ' kısa_arama_sonucu.docx')
         time.sleep(4)
         print("Dosya kaydedildi.")
     else:
