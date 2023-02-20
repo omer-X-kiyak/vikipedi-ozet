@@ -1,16 +1,35 @@
 import wikipedia
 import docx
+import os
+import time
 
 # Wikipedia dil ayarını Türkçe olarak ayarla
 wikipedia.set_lang("tr")
 
 while True:
+    # Logo Text-to-ASCII-Art-Generator (TAGG)
+    print(r"""
+       /$ /$   /$$      /$$ /$$$$$$$$ /$$$$$$$        /$$   /$$ /$$$$$$ /$$     /$$ /$$$$$$  /$$   /$$
+      |_/|_/  | $$$    /$$$| $$_____/| $$__  $$      | $$  /$$/|_  $$_/|  $$   /$$//$$__  $$| $$  /$$/
+      /$$$$$$ | $$$$  /$$$$| $$      | $$  \ $$      | $$ /$$/   | $$   \  $$ /$$/| $$  \ $$| $$ /$$/
+     /$$__  $$| $$ $$/$$ $$| $$$$$   | $$$$$$$/      | $$$$$/    | $$    \  $$$$/ | $$$$$$$$| $$$$$/
+    | $$  \ $$| $$  $$$| $$| $$__/   | $$__  $$      | $$  $$    | $$     \  $$/  | $$__  $$| $$  $$
+    | $$  | $$| $$\  $ | $$| $$      | $$  \ $$      | $$\  $$   | $$      | $$   | $$  | $$| $$\  $$
+    |  $$$$$$/| $$ \/  | $$| $$$$$$$$| $$  | $$      | $$ \  $$ /$$$$$$    | $$   | $$  | $$| $$ \ $$
+     \______/ |__/     |__/|________/|__/  |__/      |__/  \__/|______/    |__/   |__/  |__/|__/  \__/
+    """)
+    print("\n***************************************************************** *")
+    print("\n* Copyright of Ömer KIYAK, 2022                                 * *")
+    print("\n* https://www.instagram.com/omer_x_kiyak/                       * *")
+    print("\n* https://github.com/omer-X-kiyak/                              * *")
+    print("\n***************************************************************** *\n \n")
+
     # Arama terimini kullanıcıdan al
     check = input("Ne hakkında bilgi almak istersiniz (Çıkmak için q): ")
-    
+
     if check.lower() == "q":
         break
-    
+
     result = wikipedia.search(check)
 
     # Yeni bir Word belgesi oluştur
@@ -34,10 +53,14 @@ while True:
             print(f"Sayfa bulunamadı: {e}")
             continue
 
+    clear = lambda: os.system('cls')
+    clear()
+  
+   
     if result:
         # Dosyayı kaydet
-        doc.save(check + ' arama_sonucu.docx' )
-
+        doc.save(check + ' arama_sonucu.docx')
+        time.sleep(4)
         print("Dosya kaydedildi.")
     else:
         print("Arama sonucu bulunamadı.")
